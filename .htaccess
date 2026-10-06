@@ -1,0 +1,24 @@
+Options -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^$ maquinas/ [R=302,L]
+RewriteRule ^maquinas$ maquinas/ [R=301,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+Header always set Content-Security-Policy "default-src 'self' data: blob:; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'none'"
+Header always set Referrer-Policy "no-referrer"
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+
+<FilesMatch "catalog\.(js|json)$">
+Header set Cache-Control "no-store, max-age=0"
+</FilesMatch>
+
+<FilesMatch "\.(webp)$">
+Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+</IfModule>

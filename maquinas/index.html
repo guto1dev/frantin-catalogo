@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#081634">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="Catálogo Frantin — Máquinas Gráficas">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Catálogo Frantin — Máquinas Gráficas">
+  <meta property="og:description" content="Catálogo digital de máquinas Frantin.">
+  <meta property="og:url" content="https://catalogo.frantin.com.br/maquinas/">
+  <link rel="canonical" href="https://catalogo.frantin.com.br/maquinas/">
+  <title>Catálogo Frantin — Máquinas</title>
+  <link rel="stylesheet" href="../static/styles/base.css">
+  <link rel="stylesheet" href="../static/styles/flipbook.css">
+  <link rel="stylesheet" href="../static/styles/responsive.css">
+</head>
+<body>
+  <div class="app-shell" id="appShell">
+    <header class="topbar" aria-label="Controles do catálogo">
+      <div class="brand" aria-label="Frantin Soluções Gráficas">
+        <img src="../static/brand/frantin-wordmark.webp" alt="Frantin Soluções Gráficas">
+      </div>
+
+      <div class="catalog-title">
+        <strong id="catalogHeaderTitle">Catálogo de Máquinas</strong>
+        <span id="catalogEdition">2026</span>
+      </div>
+
+      <nav class="toolbar" aria-label="Ferramentas do catálogo">
+        <button class="icon-button" id="thumbsButton" type="button" aria-label="Abrir miniaturas" aria-expanded="false" title="Miniaturas">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4V4Zm10 0h6v6h-6V4ZM4 14h6v6H4v-6Zm10 0h6v6h-6v-6Z"/></svg>
+        </button>
+        <button class="icon-button" id="zoomButton" type="button" aria-label="Ampliar página atual" title="Ampliar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20.7 19.3-4.1-4.1a7.3 7.3 0 1 0-1.4 1.4l4.1 4.1 1.4-1.4ZM5 10.5a5.5 5.5 0 1 1 11 0 5.5 5.5 0 0 1-11 0Zm4.5-3h2v2h2v2h-2v2h-2v-2h-2v-2h2v-2Z"/></svg>
+        </button>
+        <button class="icon-button" id="soundButton" type="button" aria-label="Ativar som de página" aria-pressed="false" title="Som de página">
+          <svg class="sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Zm12.5 3a4.5 4.5 0 0 0-2-3.7v7.4a4.5 4.5 0 0 0 2-3.7Zm-2-8.5v2.1a7 7 0 0 1 0 12.8v2.1a9 9 0 0 0 0-17Z"/></svg>
+        </button>
+        <button class="icon-button" id="shareButton" type="button" aria-label="Compartilhar página atual" title="Compartilhar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.4 1.2l-7-4.1a3.1 3.1 0 0 0 0-2.2l7-4.1A3 3 0 1 0 15 5c0 .2 0 .4.1.6l-7.2 4.2a3 3 0 1 0 0 4.4l7.2 4.2A3 3 0 1 0 18 16Z"/></svg>
+        </button>
+        <a class="icon-button" id="downloadButton" href="#" aria-label="Baixar PDF" title="Baixar PDF">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v10.2l3.6-3.6 1.4 1.4-6 6-6-6 1.4-1.4 3.6 3.6V3ZM5 19h14v2H5v-2Z"/></svg>
+        </a>
+        <button class="icon-button" id="fullscreenButton" type="button" aria-label="Entrar em tela cheia" title="Tela cheia">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v2H6v4H4V4Zm10 0h6v6h-2V6h-4V4ZM4 14h2v4h4v2H4v-6Zm14 0h2v6h-6v-2h4v-4Z"/></svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="viewer" id="viewer">
+      <div class="ambient-glow glow-a" aria-hidden="true"></div>
+      <div class="ambient-glow glow-b" aria-hidden="true"></div>
+
+      <button class="edge-button edge-prev" id="prevButton" type="button" aria-label="Página anterior">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15.4 5.4-1.4-1.4-8 8 8 8 1.4-1.4L8.8 12l6.6-6.6Z"/></svg>
+      </button>
+
+      <section class="book-zone" id="bookZone" aria-label="Catálogo Frantin interativo">
+        <div class="book-stage intro" id="bookStage">
+          <div class="book-shadow" aria-hidden="true"></div>
+          <div class="book-landscape" id="landscapeBook" aria-hidden="false"></div>
+          <div class="book-portrait" id="portraitBook" aria-hidden="true">
+            <div class="portrait-underlay"><img id="portraitUnderlay" alt=""></div>
+            <div class="portrait-sheet" id="portraitSheet">
+              <div class="portrait-face portrait-front"><img id="portraitFront" alt=""></div>
+              <div class="portrait-face portrait-back"><img id="portraitBack" alt=""></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <button class="edge-button edge-next" id="nextButton" type="button" aria-label="Próxima página">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 18.6 10 20l8-8-8-8-1.4 1.4 6.6 6.6-6.6 6.6Z"/></svg>
+      </button>
+    </main>
+
+    <footer class="bottom-bar">
+      <button class="text-button" id="firstButton" type="button">Capa</button>
+      <div class="page-control" aria-label="Navegação por página">
+        <button class="small-nav" id="bottomPrev" type="button" aria-label="Página anterior">‹</button>
+        <label for="pageInput" class="sr-only">Ir para página</label>
+        <input id="pageInput" type="number" min="1" max="1" inputmode="numeric" value="1" aria-label="Página atual">
+        <span class="page-total" id="pageTotal">/ 1</span>
+        <button class="small-nav" id="bottomNext" type="button" aria-label="Próxima página">›</button>
+      </div>
+      <div class="spread-indicator" id="spreadIndicator" aria-live="polite">1 / 1</div>
+      <button class="text-button" id="lastButton" type="button">Contracapa</button>
+    </footer>
+  </div>
+
+  <aside class="thumbs-panel" id="thumbsPanel" aria-hidden="true" aria-label="Miniaturas das páginas">
+    <div class="thumbs-head">
+      <div>
+        <strong>Páginas</strong>
+        <span id="thumbsCount">1 página</span>
+      </div>
+      <button class="icon-button" id="closeThumbs" type="button" aria-label="Fechar miniaturas">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.7 5.3-1.4 1.4 5.3 5.3-5.3 5.3 1.4 1.4 5.3-5.3 5.3 5.3 1.4-1.4-5.3-5.3 5.3-5.3-1.4-1.4-5.3 5.3-5.3-5.3Z"/></svg>
+      </button>
+    </div>
+    <div class="thumbs-grid" id="thumbsGrid"></div>
+  </aside>
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+
+  <div class="zoom-overlay" id="zoomOverlay" hidden role="dialog" aria-modal="true" aria-label="Visualização ampliada da página">
+    <div class="zoom-toolbar">
+      <div class="zoom-page-picker" aria-label="Selecionar página ampliada">
+        <button class="zoom-control zoom-page-nav" id="zoomPagePrev" type="button" aria-label="Página anterior no zoom">‹</button>
+        <label for="zoomPageInput" class="sr-only">Página para ampliar</label>
+        <input id="zoomPageInput" class="zoom-page-input" type="number" min="1" max="1" inputmode="numeric" value="1" aria-label="Página ampliada">
+        <span class="zoom-page-total" id="zoomPageTotal">/ 1</span>
+        <button class="zoom-control zoom-page-nav" id="zoomPageNext" type="button" aria-label="Próxima página no zoom">›</button>
+        <span id="zoomLabel" class="zoom-page-label">Página 1</span>
+      </div>
+      <div class="zoom-actions">
+        <button class="zoom-control" id="zoomOut" type="button" aria-label="Diminuir zoom">−</button>
+        <button class="zoom-control" id="zoomReset" type="button" aria-label="Restaurar zoom">100%</button>
+        <button class="zoom-control" id="zoomIn" type="button" aria-label="Aumentar zoom">+</button>
+        <button class="icon-button" id="closeZoom" type="button" aria-label="Fechar visualização ampliada">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.7 5.3-1.4 1.4 5.3 5.3-5.3 5.3 1.4 1.4 5.3-5.3 5.3 5.3 1.4-1.4-5.3-5.3 5.3-5.3-1.4-1.4-5.3 5.3-5.3-5.3Z"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="zoom-canvas" id="zoomCanvas">
+      <img id="zoomImage" alt="Página ampliada do catálogo">
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="sr-only" id="liveRegion" aria-live="polite"></div>
+
+  <script defer src="../catalogs/maquinas/catalog.js"></script>
+  <script defer src="../static/js/config.js"></script>
+  <script defer src="../static/js/state.js"></script>
+  <script defer src="../static/js/page-turn.js"></script>
+  <script defer src="../static/js/ui.js"></script>
+  <script defer src="../static/js/app.js"></script>
+</body>
+</html>

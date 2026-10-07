@@ -4,4 +4,8 @@
     <loc>https://catalogo.frantin.com.br/maquinas/</loc>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://catalogo.frantin.com.br/privacidade/</loc>
+    <changefreq>yearly</changefreq>
+  </url>
 </urlset>
